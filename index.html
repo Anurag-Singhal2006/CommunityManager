@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Anurag Singhal — Community Manager for Discord & Minecraft communities." />
+  <meta name="description" content="Anurag Singhal – Community Manager for Discord & Minecraft communities." />
   <title>Anurag Singhal | Community Manager</title>
 
   <style>
@@ -13,168 +13,258 @@
       --card: rgba(255,255,255,0.04);
       --text: #e5e7eb;
       --muted: #9ca3af;
-      --accent: #fca311; /* fire accent */
+      --accent: #fca311;
       --accent-hover: #ffd166;
+      --accent-red: #ff4500;
       --radius: 16px;
     }
 
     * {
       box-sizing: border-box;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     body {
       margin: 0;
       background:
-        radial-gradient(800px 400px at 20% 0%, rgba(252,163,17,0.08), transparent),
+        radial-gradient(1000px 500px at 20% 0%, rgba(252,163,17,0.10), transparent),
+        radial-gradient(800px 400px at 80% 100%, rgba(255,69,0,0.08), transparent),
         linear-gradient(180deg, var(--bg-1), var(--bg-2));
       color: var(--text);
       line-height: 1.6;
+      min-height: 100vh;
     }
 
     .container {
       max-width: 1100px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 60px 20px 40px;
       display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 28px;
+      grid-template-columns: 320px 1fr;
+      gap: 32px;
     }
 
     /* ---------- CARDS ---------- */
     .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.10);
       border-radius: var(--radius);
-      padding: 22px;
-      transition: transform 0.25s ease;
+      padding: 24px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     }
 
     .card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-8px);
+      border-color: rgba(252,163,17,0.3);
+      box-shadow: 0 8px 30px rgba(252,163,17,0.15);
     }
 
     /* ---------- SIDEBAR ---------- */
+    aside.card {
+      position: sticky;
+      top: 20px;
+      height: fit-content;
+    }
+
     .avatar {
-      width: 90px;
-      height: 90px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, var(--accent), #ff4500);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      font-weight: 800;
-      color: #020617;
-      margin-bottom: 14px;
+      width: 120px;
+      height: 120px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 0 auto 18px;
+      border: 3px solid rgba(252,163,17,0.3);
+      box-shadow: 0 8px 32px rgba(252,163,17,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .avatar:hover {
+      transform: scale(1.05);
+      border-color: var(--accent);
+      box-shadow: 0 12px 40px rgba(252,163,17,0.3);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .role {
       display: inline-block;
-      padding: 6px 12px;
+      padding: 8px 16px;
       border-radius: 999px;
-      background: rgba(252,163,17,0.18);
+      background: linear-gradient(135deg, rgba(252,163,17,0.2), rgba(255,69,0,0.15));
       color: var(--accent);
       font-weight: 600;
       font-size: 0.9rem;
+      border: 1px solid rgba(252,163,17,0.3);
+      margin-top: 8px;
     }
 
     .contact {
-      margin-top: 16px;
+      margin-top: 24px;
       font-size: 0.95rem;
     }
 
-    .contact span {
+    .contact-item {
+      margin-top: 16px;
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: all 0.2s ease;
+    }
+
+    .contact-item:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(252,163,17,0.2);
+    }
+
+    .contact-label {
       color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
       display: block;
-      margin-top: 10px;
+    }
+
+    .contact-item a {
+      color: var(--text) !important;
+      font-weight: 500;
+      word-break: break-word;
+      transition: color 0.2s ease;
+    }
+
+    .contact-item a:hover {
+      color: var(--accent-hover) !important;
     }
 
     /* ---------- MAIN ---------- */
     h1 {
-      margin: 0 0 6px 0;
-      font-size: 1.7rem;
+      margin: 0 0 8px 0;
+      font-size: 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-red));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     h2 {
-      font-size: 1.4rem;
-      margin-bottom: 14px;
-      border-left: 4px solid var(--accent);
-      padding-left: 12px;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--accent);
+      padding-left: 14px;
+      color: var(--text);
     }
 
     h3 {
       color: var(--accent);
-      margin-bottom: 6px;
+      margin-bottom: 10px;
+      margin-top: 20px;
+      font-size: 1.1rem;
+    }
+
+    h3:first-of-type {
+      margin-top: 0;
     }
 
     ul {
-      padding-left: 18px;
+      padding-left: 20px;
+      margin: 0;
     }
 
     li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       color: var(--muted);
+      line-height: 1.7;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
     }
 
     nav {
       display: flex;
-      gap: 12px;
+      gap: 8px;
       flex-wrap: wrap;
-      margin-top: 6px;
+      justify-content: center;
     }
 
     nav a {
       color: var(--muted);
       text-decoration: none;
-      padding: 6px 10px;
-      border-radius: 10px;
+      padding: 10px 18px;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+      font-weight: 500;
+      border: 1px solid transparent;
     }
 
     nav a:hover {
-      background: rgba(255,255,255,0.06);
-      color: var(--text);
+      background: rgba(252,163,17,0.15);
+      color: var(--accent);
+      border-color: rgba(252,163,17,0.3);
+      transform: translateY(-2px);
+    }
+
+    section {
+      margin-top: 20px;
     }
 
     footer {
-      margin-top: 40px;
+      margin-top: 50px;
+      padding-top: 30px;
       text-align: center;
       font-size: 0.9rem;
       color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
-    /* ---------- 🔥 LINK FIX (IMPORTANT) ---------- */
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    a:hover {
-      color: var(--accent-hover);
-    }
-
-    /* FORCE mail + discord (kills blue forever) */
-    a[href^="mailto"],
-    a[href*="discord"] {
-      color: var(--text) !important;
-    }
-
-    a[href^="mailto"]:hover,
-    a[href*="discord"]:hover {
-      color: var(--accent-hover) !important;
+    /* ---------- SCROLL BEHAVIOR ---------- */
+    html {
+      scroll-behavior: smooth;
     }
 
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 900px) {
       .container {
         grid-template-columns: 1fr;
+        padding: 30px 20px;
+      }
+
+      aside.card {
+        position: relative;
+        top: 0;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .avatar {
+        width: 100px;
+        height: 100px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .card {
+        padding: 20px;
       }
     }
   </style>
@@ -185,18 +275,24 @@
 
     <!-- SIDEBAR -->
     <aside class="card">
-      <div class="avatar">AS</div>
+      <div class="avatar">
+        <img src="https://i.ibb.co/ZRHF4PGW/IMG-20251103-173841-342.webp" alt="Anurag Singhal">
+      </div>
       <h1>Anurag Singhal</h1>
       <div class="role">Community Manager</div>
 
       <div class="contact">
-        <span>Discord</span>
-        <a href="#">Arhenniuss</a>
+        <div class="contact-item">
+          <span class="contact-label">Discord</span>
+          <a href="#">Arhenniuss</a>
+        </div>
 
-        <span>Email</span>
-        <a href="mailto:anuragsinghalx.official@gmail.com">
-          anuragsinghalx.official@gmail.com
-        </a>
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <a href="mailto:anuragsinghalx.official@gmail.com">
+            anuragsinghalx.official@gmail.com
+          </a>
+        </div>
       </div>
     </aside>
 
@@ -204,13 +300,13 @@
     <main>
       <div class="card">
         <nav>
-          <a href="#core">Core</a>
-          <a href="#work">Work</a>
+          <a href="#core">Core Expertise</a>
+          <a href="#work">Work Experience</a>
           <a href="#bring">What I Bring</a>
         </nav>
       </div>
 
-      <section id="core" class="card" style="margin-top:16px">
+      <section id="core" class="card">
         <h2>Core Expertise</h2>
         <div class="grid">
           <ul>
@@ -228,29 +324,29 @@
         </div>
       </section>
 
-      <section id="work" class="card" style="margin-top:16px">
+      <section id="work" class="card">
         <h2>Work Experience</h2>
 
-        <h3>Fakepixel — Hiring Team Manager (Active)</h3>
+        <h3>Fakepixel – Hiring Team Manager (Active)</h3>
         <ul>
           <li>Hired and managing 4 developers</li>
           <li>Bridge between management and dev team</li>
         </ul>
 
-        <h3>Fakepixel — Community Manager (Retired)</h3>
+        <h3>Fakepixel – Community Manager (Retired)</h3>
         <ul>
           <li>Created staff & player guidelines</li>
           <li>Designed staff reward & shop system</li>
           <li>Implemented logging & punishment proof systems</li>
         </ul>
 
-        <h3>Fakepixel — YouTube Manager (Retired)</h3>
+        <h3>Fakepixel – YouTube Manager (Retired)</h3>
         <ul>
           <li>Managed creator ranks, growth tracking & collaborations</li>
         </ul>
       </section>
 
-      <section id="bring" class="card" style="margin-top:16px">
+      <section id="bring" class="card">
         <h2>What I Bring</h2>
         <ul>
           <li>Clear, scalable community structures</li>
